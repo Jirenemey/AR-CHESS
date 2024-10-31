@@ -1,0 +1,78 @@
+﻿#include "pch-c.h"
+
+
+#include "codegen/il2cpp-codegen-metadata.h"
+
+
+
+
+
+extern void TapToPlaceObject_Awake_m93AB231B500D89D75C55A7E390FF8919204F866D (void);
+extern void TapToPlaceObject_GetTouchPosition_m016B08112960A5FBC5FC27CF56A240AC5B544F22 (void);
+extern void TapToPlaceObject_Update_m076763BF445E2156DCB401E578EEF314EBEEDA52 (void);
+extern void TapToPlaceObject__ctor_mC1C38C1FA5C3A4C7334EE47F8FEA07430BF24ACF (void);
+extern void TapToPlaceObject__cctor_m8A892014BAE3869097F36B476EE7B3DA0102D81E (void);
+extern void ImageTracking_OnEnable_m6DEDEE1663EC7AA2AB1000CF58776EC231A744B7 (void);
+extern void ImageTracking_OnDisable_m62F1D5572FB9F965AE9E9D881D14D2747FFEE797 (void);
+extern void ImageTracking_OnImageChanged_m748E4B68B94664DBDCAE4AFA6B46C8738823CFAB (void);
+extern void ImageTracking__ctor_m88C12006AC3BAED3DAA4F0E0544DAA5294D96A5A (void);
+extern void GameManager_GotoScene_m3EB5AFCCB4CD6CCE6804BE19A6D0DBB54B2E3CC7 (void);
+extern void GameManager_QuitGame_m84BA17826FA89C594024D63671F626499DF12D69 (void);
+extern void GameManager__ctor_mF453CED520617BFB65C52405A964E06CF17DB368 (void);
+extern void UnitySourceGeneratedAssemblyMonoScriptTypes_v1_Get_mBEB95BEB954BB63E9710BBC7AD5E78C4CB0A0033 (void);
+extern void UnitySourceGeneratedAssemblyMonoScriptTypes_v1__ctor_mE70FB23ACC1EA12ABC948AA22C2E78B2D0AA39B1 (void);
+static Il2CppMethodPointer s_methodPointers[14] = 
+{
+	TapToPlaceObject_Awake_m93AB231B500D89D75C55A7E390FF8919204F866D,
+	TapToPlaceObject_GetTouchPosition_m016B08112960A5FBC5FC27CF56A240AC5B544F22,
+	TapToPlaceObject_Update_m076763BF445E2156DCB401E578EEF314EBEEDA52,
+	TapToPlaceObject__ctor_mC1C38C1FA5C3A4C7334EE47F8FEA07430BF24ACF,
+	TapToPlaceObject__cctor_m8A892014BAE3869097F36B476EE7B3DA0102D81E,
+	ImageTracking_OnEnable_m6DEDEE1663EC7AA2AB1000CF58776EC231A744B7,
+	ImageTracking_OnDisable_m62F1D5572FB9F965AE9E9D881D14D2747FFEE797,
+	ImageTracking_OnImageChanged_m748E4B68B94664DBDCAE4AFA6B46C8738823CFAB,
+	ImageTracking__ctor_m88C12006AC3BAED3DAA4F0E0544DAA5294D96A5A,
+	GameManager_GotoScene_m3EB5AFCCB4CD6CCE6804BE19A6D0DBB54B2E3CC7,
+	GameManager_QuitGame_m84BA17826FA89C594024D63671F626499DF12D69,
+	GameManager__ctor_mF453CED520617BFB65C52405A964E06CF17DB368,
+	UnitySourceGeneratedAssemblyMonoScriptTypes_v1_Get_mBEB95BEB954BB63E9710BBC7AD5E78C4CB0A0033,
+	UnitySourceGeneratedAssemblyMonoScriptTypes_v1__ctor_mE70FB23ACC1EA12ABC948AA22C2E78B2D0AA39B1,
+};
+static const int32_t s_InvokerIndices[14] = 
+{
+	8357,
+	4306,
+	8357,
+	8357,
+	12158,
+	8357,
+	8357,
+	6394,
+	8357,
+	6547,
+	8357,
+	8357,
+	12182,
+	8357,
+};
+IL2CPP_EXTERN_C const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule;
+const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule = 
+{
+	"Assembly-CSharp.dll",
+	14,
+	s_methodPointers,
+	0,
+	NULL,
+	s_InvokerIndices,
+	0,
+	NULL,
+	0,
+	NULL,
+	0,
+	NULL,
+	NULL,
+	NULL,
+	NULL,
+	NULL,
+	NULL,
+};
