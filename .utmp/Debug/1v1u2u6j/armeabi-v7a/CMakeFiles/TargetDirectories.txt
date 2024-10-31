@@ -1,0 +1,5 @@
+C:/Users/kuman/OneDrive/Documents/GitHub/AR-CHESS/.utmp/Debug/1v1u2u6j/armeabi-v7a/CMakeFiles/edit_cache.dir
+C:/Users/kuman/OneDrive/Documents/GitHub/AR-CHESS/.utmp/Debug/1v1u2u6j/armeabi-v7a/CMakeFiles/rebuild_cache.dir
+C:/Users/kuman/OneDrive/Documents/GitHub/AR-CHESS/.utmp/Debug/1v1u2u6j/armeabi-v7a/FramePacing/CMakeFiles/swappywrapper.dir
+C:/Users/kuman/OneDrive/Documents/GitHub/AR-CHESS/.utmp/Debug/1v1u2u6j/armeabi-v7a/FramePacing/CMakeFiles/edit_cache.dir
+C:/Users/kuman/OneDrive/Documents/GitHub/AR-CHESS/.utmp/Debug/1v1u2u6j/armeabi-v7a/FramePacing/CMakeFiles/rebuild_cache.dir

@@ -19748,12 +19748,12 @@ IL_001a:
 		Type_t* L_5 = ___0_t;
 		NullCheck(L_5);
 		Type_t* L_6;
-		L_6 = VirtualFuncInvoker0< Type_t* >::Invoke(107, L_5);
+		L_6 = VirtualFuncInvoker0< Type_t* >::Invoke(108, L_5);
 		UxmlTypeDescription_GenerateAttributeDescription_mB339359FE56501A8DB56D80A28614FF69A83DD9C(__this, L_6, NULL);
 		Type_t* L_7 = ___0_t;
 		NullCheck(L_7);
 		FieldInfoU5BU5D_t50D47CBECF1AEB152F555803E3329D9E34DBF8D8* L_8;
-		L_8 = VirtualFuncInvoker1< FieldInfoU5BU5D_t50D47CBECF1AEB152F555803E3329D9E34DBF8D8*, int32_t >::Invoke(83, L_7, ((int32_t)36));
+		L_8 = VirtualFuncInvoker1< FieldInfoU5BU5D_t50D47CBECF1AEB152F555803E3329D9E34DBF8D8*, int32_t >::Invoke(84, L_7, ((int32_t)36));
 		V_0 = L_8;
 		FieldInfoU5BU5D_t50D47CBECF1AEB152F555803E3329D9E34DBF8D8* L_9 = V_0;
 		NullCheck(L_9);
@@ -32976,7 +32976,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void EventInterestReflectionUtils_GetDefaultE
 		Type_t* L_4 = ___0_elementType;
 		NullCheck(L_4);
 		Type_t* L_5;
-		L_5 = VirtualFuncInvoker0< Type_t* >::Invoke(107, L_4);
+		L_5 = VirtualFuncInvoker0< Type_t* >::Invoke(108, L_4);
 		V_2 = L_5;
 		Type_t* L_6 = V_2;
 		il2cpp_codegen_runtime_class_init_inline(il2cpp_defaults.systemtype_class);

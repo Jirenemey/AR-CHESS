@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARSubsystems;
+using UnityEngine.EventSystems;
 
 public class ChessLogic : MonoBehaviour
 {
     [Header("Art")]
     [SerializeField] private Material tileMaterial;
+    [SerializeField] private Material hoverMaterial;
 
     [Header("Chess Pieces")]
     public GameObject[] WhitePawn = new GameObject[8];
@@ -32,14 +34,20 @@ public class ChessLogic : MonoBehaviour
     // Keep track of all objects being hit by Raycast
     static List<ARRaycastHit> hits = new List<ARRaycastHit>();
     
+    Camera m_MainCamera;
 
     private const int TILE_COUNT_X = 8;
     private const int TILE_COUNT_Y = 8;
     private GameObject[,] tiles;
+    private Vector2Int currentHover;
     void Awake()
     {
         arRaycastManager = GetComponent<ARRaycastManager>();
         GenerateAllTiles(1, TILE_COUNT_X, TILE_COUNT_Y);
+    }
+
+    void Start(){
+        m_MainCamera = Camera.main;
     }
 
     private void GenerateAllTiles(float tileSize, int tileCountX, int tileCountY){
@@ -47,37 +55,61 @@ public class ChessLogic : MonoBehaviour
         for (int x = 0; x < tileCountX; x++){
             for(int y = 0; y < tileCountY; y++){
                 tiles[x, y] = GenerateSingleTile(tileSize, x, y);
+                tiles[x, y].layer = LayerMask.NameToLayer("Tile");
             }
         }
     }    
-    
-    bool GetTouchPosition(out Vector2 touchPosition)
-    {
-        // Was there a Touch on Screen?
-        if(Input.touchCount > 0)
-        {
-            // Store the Touch position
-            touchPosition = Input.GetTouch(0).position;
-            
-            // Return Touch happened
-            return true;
-        }
-
-        // No Touch
-        touchPosition = Vector2.zero;
-
-
-        // Return Touch did not happened
-        return false;
-    }
 
     private void Update(){
-        if(!GetTouchPosition(out Vector2 touchposition))
-            return;
+        if(Input.touchCount > 0) {
+            Touch touch = Input.GetTouch(0);
+            touchPosition = touch.position;
 
-        if (arRaycastManager.Raycast(touchPosition, hits,
-            TrackableType.PlaneWithinPolygon)){
+            //Checking to see if the position of the touch
+            // is over a UI object in case of UI overlay on screen.
+        if (!EventSystem.current.IsPointerOverGameObject(Input.GetTouch(0).fingerId)) {
+            if (touch.phase == TouchPhase.Began) {
+                WhiteKing.transform.position += new Vector3(1, 0, 0);
+                Ray ray = m_MainCamera.ScreenPointToRay(touchPosition);
+                RaycastHit hitObject;
+
+                    if (Physics.Raycast(ray, out hitObject, LayerMask.GetMask("Tile"))) {
+                        Vector2Int hitPosition = LookupTileIndex(hitObject.transform.gameObject);
+                        WhiteKing.transform.position += new Vector3(-1, 0, 0);
+
+                        if(currentHover == -Vector2Int.one){
+                            WhiteKing.transform.position -= new Vector3(1, 0, 0);
+                            currentHover = hitPosition;
+                            tiles[hitPosition.x, hitPosition.y].layer = LayerMask.NameToLayer("Hover");
+                            tiles[hitPosition.x, hitPosition.y].GetComponent<MeshRenderer>().material = hoverMaterial;
+                        }
+
+                        if(currentHover != hitPosition){
+                            WhiteKing.transform.position += new Vector3(0, 1, 0);
+                            tiles[currentHover.x, currentHover.y].layer = LayerMask.NameToLayer("Tile");
+                            tiles[currentHover.x, currentHover.y].GetComponent<MeshRenderer>().material = tileMaterial;
+                            currentHover = hitPosition;
+                            tiles[hitPosition.x, hitPosition.y].layer = LayerMask.NameToLayer("Hover");
+                            tiles[hitPosition.x, hitPosition.y].GetComponent<MeshRenderer>().material = hoverMaterial;
+
+                        }
+
+                        //Do whatever you want to do with the hitObject,
+                        // which in this case would be your, well, case.
+                        // Identify it either through name or tag, for instance below.
+                        //if(hitObject.transform.CompareTag("Tile")) {
+                        //Do something with the case
+                        //}
+                    } else{
+                        if(currentHover != -Vector2Int.one){
+                            tiles[currentHover.x, currentHover.y].layer = LayerMask.NameToLayer("Tile");
+                            tiles[currentHover.x, currentHover.y].GetComponent<MeshRenderer>().material = tileMaterial;
+                            currentHover = -Vector2Int.one;
+                        }
+                    } 
+                }
             }
+        }
     }
 
 
@@ -106,5 +138,15 @@ public class ChessLogic : MonoBehaviour
         tileObject.AddComponent<BoxCollider>();
 
         return tileObject;
+    }
+
+    private Vector2Int LookupTileIndex(GameObject hitInfo){
+        for (int x = 0; x < TILE_COUNT_X; x++){
+            for (int y = 0; y < TILE_COUNT_Y; y++){
+                if(tiles[x, y] == hitInfo)
+                return new Vector2Int(x, y);
+            }
+        }
+        return -Vector2Int.one;
     }
 }
