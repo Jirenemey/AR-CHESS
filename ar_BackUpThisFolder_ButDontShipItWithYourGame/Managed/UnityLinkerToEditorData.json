@@ -789,17 +789,13 @@
         "dependencies": [
           {
             "name": "ParticleSystem",
-            "scenes": [
-              "Assets/Scenes/04_ARSession_Test.unity"
-            ],
+            "scenes": [],
             "dependencyType": 0,
             "icon": null
           },
           {
             "name": "ParticleSystemRenderer",
-            "scenes": [
-              "Assets/Scenes/04_ARSession_Test.unity"
-            ],
+            "scenes": [],
             "dependencyType": 0,
             "icon": null
           }
@@ -812,14 +808,6 @@
             "name": "BoxCollider",
             "scenes": [
               "Assets/Scenes/03_Object_Placement.unity",
-              "Assets/Scenes/04_ARSession_Test.unity"
-            ],
-            "dependencyType": 0,
-            "icon": null
-          },
-          {
-            "name": "CapsuleCollider",
-            "scenes": [
               "Assets/Scenes/04_ARSession_Test.unity"
             ],
             "dependencyType": 0,
@@ -1180,9 +1168,7 @@
           },
           {
             "name": "CanvasGroup",
-            "scenes": [
-              "Assets/Scenes/04_ARSession_Test.unity"
-            ],
+            "scenes": [],
             "dependencyType": 0,
             "icon": null
           },

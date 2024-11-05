@@ -19338,6 +19338,13 @@ static  int32_t UnresolvedVirtualCall_1117 (RuntimeObject* __this, RuntimeObject
 	method->invoker_method(il2cpp_codegen_get_method_pointer(method), method, __this, args, &il2cppRetVal);
 	return il2cppRetVal;
 }
+static  int32_t UnresolvedVirtualCall_1118 (RuntimeObject* __this, RuntimeObject* p1, RuntimeObject* p2, RuntimeObject* p3, const RuntimeMethod* method)
+{
+	void* args[] = {p1,p2,p3};
+	int32_t il2cppRetVal;
+	method->invoker_method(il2cpp_codegen_get_method_pointer(method), method, __this, args, &il2cppRetVal);
+	return il2cppRetVal;
+}
 static  int32_t UnresolvedStaticCall_1118 (RuntimeObject* p1, RuntimeObject* p2, RuntimeObject* p3, const RuntimeMethod* method)
 {
 	void* args[] = {p1,p2,p3};
@@ -31907,7 +31914,7 @@ const Il2CppMethodPointer g_UnresolvedVirtualMethodPointers[2490] =
 	(const Il2CppMethodPointer)UnresolvedVirtualCall_1115,
 	(const Il2CppMethodPointer)UnresolvedVirtualCall_1116,
 	(const Il2CppMethodPointer)UnresolvedVirtualCall_1117,
-	NULL,
+	(const Il2CppMethodPointer)UnresolvedVirtualCall_1118,
 	NULL,
 	(const Il2CppMethodPointer)UnresolvedVirtualCall_1120,
 	NULL,

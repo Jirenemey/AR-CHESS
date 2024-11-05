@@ -94,6 +94,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4000012986792146}
+  - component: {fileID: 7030992849136271514}
   m_Layer: 0
   m_Name: Chess Board
   m_TagString: Untagged
@@ -109,7 +110,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1000011581524622}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+  m_LocalRotation: {x: -0.7069834, y: 0, z: 0, w: 0.7072302}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 10, y: 10, z: 10}
   m_ConstrainProportionsScale: 0
@@ -117,7 +118,38 @@ Transform:
   - {fileID: 4000011245072044}
   - {fileID: 4000012227137046}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -89.98, y: 0, z: 0}
+--- !u!114 &7030992849136271514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000011581524622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b50156c6f92fb71498e689051704d138, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tileMaterial: {fileID: 2100000, guid: 18d7b1fe06ef7d241b4f06da38affe07, type: 2}
+  hoverMaterial: {fileID: 2100000, guid: 5e14386f6d7d5dc4f9d8699babb75170, type: 2}
+  highlightMaterial: {fileID: 2100000, guid: 3a012b5d566ce104dac8ebd10e06341c, type: 2}
+  tileSize: 0.6
+  yOffset: 0.05
+  boardCenter: {x: 0, y: 0, z: -7.5}
+  dragOffset: 0.15
+  victoryScreen: {fileID: 0}
+  prefabs:
+  - {fileID: 1000013277376148, guid: 3605a6e4fde7d594aa08481185959edb, type: 3}
+  - {fileID: 1000012089885188, guid: 6771efaae8343104b88ef1dd839fd639, type: 3}
+  - {fileID: 1000014234871720, guid: cb0afc2bcef746940a57b9fff95cf079, type: 3}
+  - {fileID: 1000014291839912, guid: e2e9e589ac51bdb48bcae102d4799914, type: 3}
+  - {fileID: 1000011613667446, guid: c9476b5c23fb4634485fcb52734c04d5, type: 3}
+  - {fileID: 1000013557280178, guid: d992acfff4e84c44e97513dc227b06b7, type: 3}
+  teamMaterials:
+  - {fileID: 2100000, guid: b391301c47109a144bbb6408e48da028, type: 2}
+  - {fileID: 2100000, guid: 973635ff02379f4429b7df0543346d32, type: 2}
+  arRaycastManager: {fileID: 0}
 --- !u!1 &1000012137082366
 GameObject:
   m_ObjectHideFlags: 0

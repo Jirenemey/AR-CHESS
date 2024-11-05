@@ -5,6 +5,13 @@ using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARSubsystems;
 using UnityEngine.EventSystems;
 
+public enum SpecialMove{
+    None = 0,
+    EnPassant,
+    Castling,
+    Promotion
+}
+
 public class ChessLogic : MonoBehaviour
 {
     [Header("Art")]
@@ -14,7 +21,8 @@ public class ChessLogic : MonoBehaviour
     [SerializeField] private float tileSize = 1.0f;
     [SerializeField] private float yOffset = 0.2f;
     [SerializeField] private Vector3 boardCenter = Vector3.zero;
-    [SerializeField] private float dragOffset = 0.15f;
+    [SerializeField] private float dragOffset = 0.015f;
+    [SerializeField] private GameObject victoryScreen;
 
     [Header("Prefabs & Materials")]
     [SerializeField] private GameObject[] prefabs;
@@ -35,6 +43,9 @@ public class ChessLogic : MonoBehaviour
     private Vector3 bounds;
     private bool selectPiece = false; 
     private bool canMove;
+    private bool isWhiteTurn;
+    private SpecialMove specialMove;
+    private List<Vector2Int[]> moveList = new List<Vector2Int[]>();
 
     void Awake()
     {
@@ -43,10 +54,9 @@ public class ChessLogic : MonoBehaviour
 
         SpawnAllPieces();
         PositionAllPieces();
-    }
-    void Start(){
+        isWhiteTurn = true;
         m_MainCamera = Camera.main;
-    } 
+    }
 
     private void Update(){
         if(Input.touchCount > 0) {
@@ -65,11 +75,12 @@ public class ChessLogic : MonoBehaviour
 
                         if(chessPieces[hitPosition.x, hitPosition.y] != null && selectPiece == false){
                             // Is it our turn?
-                            if(true){
+                            if(chessPieces[hitPosition.x, hitPosition.y].team == 0 && isWhiteTurn || chessPieces[hitPosition.x, hitPosition.y].team == 1 && !isWhiteTurn){
 
                                 currentlyDragging = chessPieces[hitPosition.x, hitPosition.y];
                                 selectPiece = true;
                                 availableMoves = currentlyDragging.GetAvailableMoves(ref chessPieces, TILE_COUNT_X, TILE_COUNT_Y);
+                                specialMove = currentlyDragging.GetSpecialMoves(ref chessPieces, ref moveList, ref availableMoves);
 
                                 if(currentHover == -Vector2Int.one){
                                     currentHover = hitPosition;
@@ -94,24 +105,20 @@ public class ChessLogic : MonoBehaviour
                             // else move piece over there and capture enemy piece if there
                             if(!canMove){
                                 currentlyDragging.SetPosition(GetTileCentre(previousPosition.x, previousPosition.y));
-                                currentlyDragging = null;
                             }
                             currentlyDragging = null;
                             RemoveHighlightTiles();
                             tiles[previousPosition.x, previousPosition.y].GetComponent<MeshRenderer>().material = tileMaterial;
                             selectPiece = false;
+                            currentHover = -Vector2Int.one;
                         }
-
-                        //Do whatever you want to do with the hitObject,
-                        // which in this case would be your, well, case.
-                        // Identify it either through name or tag, for instance below.
-                        //if(hitObject.transform.CompareTag("Tile")) {
-                        //Do something with the case
-                        //}
+                            if(currentlyDragging)
+                                currentlyDragging.SetPosition(Vector3.up * dragOffset);
                     } else{
                         if(currentHover != -Vector2Int.one){
                             tiles[currentHover.x, currentHover.y].GetComponent<MeshRenderer>().material = tileMaterial;
                             currentHover = -Vector2Int.one;
+                            currentlyDragging.SetPosition(GetTileCentre(currentlyDragging.currentX, currentlyDragging.currentY));
                             currentlyDragging = null;
                             RemoveHighlightTiles();
                             selectPiece = false;
@@ -119,9 +126,6 @@ public class ChessLogic : MonoBehaviour
                     } 
                 }
             }
-        }
-        if(currentlyDragging){
-            currentlyDragging.SetPosition(Vector3.up * dragOffset);
         }
     }
 
@@ -231,7 +235,6 @@ private void HighlightTiles(){
         tiles[availableMoves[i].x, availableMoves[i].y].GetComponent<MeshRenderer>().material = highlightMaterial;
     }
 }
-
 private void RemoveHighlightTiles(){
     for(int i = 0; i < availableMoves.Count; i++){
         tiles[availableMoves[i].x, availableMoves[i].y].GetComponent<MeshRenderer>().material = tileMaterial;
@@ -240,8 +243,62 @@ private void RemoveHighlightTiles(){
     availableMoves.Clear();
 }
 
+// Checkmate
+private void Checkmate(int team){
+    DisplayVictory(team);
+}
+private void DisplayVictory(int winningTeam){
+    victoryScreen.SetActive(true);
+    victoryScreen.transform.GetChild(winningTeam).gameObject.SetActive(true);
+}
+public void OnResetButton(){
+    //UI
+    victoryScreen.transform.GetChild(0).gameObject.SetActive(false);
+    victoryScreen.transform.GetChild(1).gameObject.SetActive(false);
+    victoryScreen.SetActive(false);
+
+    // Fields reset
+    currentlyDragging = null;
+    availableMoves.Clear();
+    moveList.Clear();
+
+    //Clean up
+    for(int x = 0; x < TILE_COUNT_X; x++){
+        for(int y = 0; y < TILE_COUNT_Y; y++){
+            if(chessPieces[x, y] != null)
+                Destroy(chessPieces[x, y].gameObject);
+
+                chessPieces[x, y] = null;
+        }
+    }
+
+    SpawnAllPieces();
+    PositionAllPieces();
+    isWhiteTurn = true;
+}
+public void ExitButton(){
+    Application.Quit();
+}
+
+// Special Moves
+private void ProcessSpecialMove(){
+    if(specialMove == SpecialMove.EnPassant){
+        var newMove = moveList[moveList.Count - 1];
+        ChessPiece myPawn = chessPieces[newMove[1].x, newMove[1].y];
+        var targetPawnPosition = moveList[moveList.Count - 2];
+        ChessPiece enemyPawn = chessPieces[targetPawnPosition[1].x, targetPawnPosition[1].y];
+
+        if(myPawn.currentX == enemyPawn.currentX){
+            if(myPawn.currentY == enemyPawn.currentY - 1 || myPawn.currentY == enemyPawn.currentY + 1){
+                Destroy(chessPieces[targetPawnPosition[1].x, targetPawnPosition[1].y].gameObject);
+                chessPieces[enemyPawn.currentX, enemyPawn.currentY] = null;
+            }
+        }
+    }
+}
+
 //Operations
-private bool ContainsValidMove(ref List<Vector2Int> moves, Vector2 pos){
+private bool ContainsValidMove(ref List<Vector2Int> moves, Vector2Int pos){
     for (int i = 0; i < moves.Count; i++)
         if(moves[i].x == pos.x && moves[i].y == pos.y)
             return true;
@@ -249,7 +306,7 @@ private bool ContainsValidMove(ref List<Vector2Int> moves, Vector2 pos){
     return false;
 }
 private bool MoveTo(ChessPiece cp, int x, int y){
-    if(!ContainsValidMove(ref availableMoves, new Vector2(x,y)))
+    if(!ContainsValidMove(ref availableMoves, new Vector2Int(x,y)))
         return false;
 
 
@@ -257,21 +314,30 @@ private bool MoveTo(ChessPiece cp, int x, int y){
 
     // Is there another piece on the target position?
     if(chessPieces[x, y] != null){
-        ChessPiece ocp = chessPieces[x, y];
+        ChessPiece ocp = chessPieces[x, y]; // other chess piece
 
-        if(cp.team == ocp.team)
+        if(cp.team == ocp.team){
             return false;
+        }
         
         // If its the enemy team
         Destroy(chessPieces[x, y].gameObject);
+
+        if(ocp.type == ChessPieceType.King && ocp.team == 0)
+            Checkmate(1);
+        if(ocp.type == ChessPieceType.King && ocp.team == 1)
+            Checkmate(0);
     }
-
-
 
     chessPieces[x, y] = cp;
     chessPieces[previousPosition.x, previousPosition.y] = null;
 
     PositionSinglePiece(x, y);
+
+    isWhiteTurn = !isWhiteTurn;
+    
+    moveList.Add(new Vector2Int[] {previousPosition, new Vector2Int(x, y)});
+    ProcessSpecialMove();
 
     return true;
 }
