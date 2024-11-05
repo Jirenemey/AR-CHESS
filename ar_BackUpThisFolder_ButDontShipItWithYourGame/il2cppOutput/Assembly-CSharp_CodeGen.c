@@ -49,7 +49,11 @@ extern void GameManager_GotoScene_m3EB5AFCCB4CD6CCE6804BE19A6D0DBB54B2E3CC7 (voi
 extern void GameManager_QuitGame_m84BA17826FA89C594024D63671F626499DF12D69 (void);
 extern void GameManager__ctor_mF453CED520617BFB65C52405A964E06CF17DB368 (void);
 extern void King_GetAvailableMoves_mC8C9DC9B48A749BDF27D56EF8013F1C103A76B75 (void);
+extern void King_GetSpecialMoves_mA103E444A4F57AAF24D45E6CF0E4ADB47600F9F5 (void);
 extern void King__ctor_m0D1E4FA0B41F926F658413FEA06B6E75A5E4D06D (void);
+extern void King_U3CGetSpecialMovesU3Eb__1_0_m5F33AABF486B8C57EE5FCE132AFD15E17AF23D13 (void);
+extern void King_U3CGetSpecialMovesU3Eb__1_1_mECFCFA0A23A1352D0E5612C565BBF27E0596DDF1 (void);
+extern void King_U3CGetSpecialMovesU3Eb__1_2_mF3DB6D589E6F5A0C5C29D19A38D6F0810D504E47 (void);
 extern void Knight_GetAvailableMoves_m8DFCD32ED8BC1AAFC81B030892CEA4539A999EFB (void);
 extern void Knight__ctor_m4F3A9369169B09789175EF297DA2B6424ED376B3 (void);
 extern void NewBehaviourScript_GetAvailableMoves_m5C2312BFF5C837C54D775CB403586FC56E84092E (void);
@@ -61,7 +65,7 @@ extern void Rook_GetAvailableMoves_m5ADC71F8EDC41215B3841814F65A36889923904C (vo
 extern void Rook__ctor_m0BC5D3F2407E14DE98B67A083573631786236341 (void);
 extern void UnitySourceGeneratedAssemblyMonoScriptTypes_v1_Get_mBEB95BEB954BB63E9710BBC7AD5E78C4CB0A0033 (void);
 extern void UnitySourceGeneratedAssemblyMonoScriptTypes_v1__ctor_mE70FB23ACC1EA12ABC948AA22C2E78B2D0AA39B1 (void);
-static Il2CppMethodPointer s_methodPointers[54] = 
+static Il2CppMethodPointer s_methodPointers[58] = 
 {
 	TapToPlaceObject_Awake_m93AB231B500D89D75C55A7E390FF8919204F866D,
 	TapToPlaceObject_GetTouchPosition_m016B08112960A5FBC5FC27CF56A240AC5B544F22,
@@ -105,7 +109,11 @@ static Il2CppMethodPointer s_methodPointers[54] =
 	GameManager_QuitGame_m84BA17826FA89C594024D63671F626499DF12D69,
 	GameManager__ctor_mF453CED520617BFB65C52405A964E06CF17DB368,
 	King_GetAvailableMoves_mC8C9DC9B48A749BDF27D56EF8013F1C103A76B75,
+	King_GetSpecialMoves_mA103E444A4F57AAF24D45E6CF0E4ADB47600F9F5,
 	King__ctor_m0D1E4FA0B41F926F658413FEA06B6E75A5E4D06D,
+	King_U3CGetSpecialMovesU3Eb__1_0_m5F33AABF486B8C57EE5FCE132AFD15E17AF23D13,
+	King_U3CGetSpecialMovesU3Eb__1_1_mECFCFA0A23A1352D0E5612C565BBF27E0596DDF1,
+	King_U3CGetSpecialMovesU3Eb__1_2_mF3DB6D589E6F5A0C5C29D19A38D6F0810D504E47,
 	Knight_GetAvailableMoves_m8DFCD32ED8BC1AAFC81B030892CEA4539A999EFB,
 	Knight__ctor_m4F3A9369169B09789175EF297DA2B6424ED376B3,
 	NewBehaviourScript_GetAvailableMoves_m5C2312BFF5C837C54D775CB403586FC56E84092E,
@@ -118,7 +126,7 @@ static Il2CppMethodPointer s_methodPointers[54] =
 	UnitySourceGeneratedAssemblyMonoScriptTypes_v1_Get_mBEB95BEB954BB63E9710BBC7AD5E78C4CB0A0033,
 	UnitySourceGeneratedAssemblyMonoScriptTypes_v1__ctor_mE70FB23ACC1EA12ABC948AA22C2E78B2D0AA39B1,
 };
-static const int32_t s_InvokerIndices[54] = 
+static const int32_t s_InvokerIndices[58] = 
 {
 	8588,
 	4375,
@@ -162,7 +170,11 @@ static const int32_t s_InvokerIndices[54] =
 	8588,
 	8588,
 	1289,
+	1264,
 	8588,
+	4549,
+	4549,
+	4549,
 	1289,
 	8588,
 	1289,
@@ -179,7 +191,7 @@ IL2CPP_EXTERN_C const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule;
 const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule = 
 {
 	"Assembly-CSharp.dll",
-	54,
+	58,
 	s_methodPointers,
 	0,
 	NULL,

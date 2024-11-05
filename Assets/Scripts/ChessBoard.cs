@@ -113,7 +113,7 @@ public class ChessLogic : MonoBehaviour
                             currentHover = -Vector2Int.one;
                         }
                             if(currentlyDragging)
-                                currentlyDragging.SetPosition(Vector3.up * dragOffset);
+                                currentlyDragging.SetPosition(new Vector3(0, -5, 0) * dragOffset);
                     } else{
                         if(currentHover != -Vector2Int.one){
                             tiles[currentHover.x, currentHover.y].GetComponent<MeshRenderer>().material = tileMaterial;
@@ -292,6 +292,61 @@ private void ProcessSpecialMove(){
             if(myPawn.currentY == enemyPawn.currentY - 1 || myPawn.currentY == enemyPawn.currentY + 1){
                 Destroy(chessPieces[targetPawnPosition[1].x, targetPawnPosition[1].y].gameObject);
                 chessPieces[enemyPawn.currentX, enemyPawn.currentY] = null;
+            }
+        }
+    }
+
+    if(specialMove == SpecialMove.Castling){
+        Vector2Int[] lastMove = moveList[moveList.Count - 1];
+
+        // Left rook 
+        if(lastMove[1].x == 2){
+            if(lastMove[1].y == 0 ) // white side
+            {
+                ChessPiece rook = chessPieces[0, 0];
+                chessPieces[3, 0] = rook;
+                PositionSinglePiece(3, 0);
+                chessPieces[0, 0] = null;
+            } else if(lastMove[1].y == 7){ // black side
+                ChessPiece rook = chessPieces[0, 7];
+                chessPieces[3, 7] = rook;
+                PositionSinglePiece(3, 7);
+                chessPieces[0, 7] = null;
+            }
+        }
+
+        // Right rook 
+        if(lastMove[1].x == 6){
+            if(lastMove[1].y == 0 ) // white side
+            {
+                ChessPiece rook = chessPieces[7, 0];
+                chessPieces[5, 0] = rook;
+                PositionSinglePiece(5, 0);
+                chessPieces[7, 0] = null;
+            } else if(lastMove[1].y == 7){ // black side
+                ChessPiece rook = chessPieces[7, 7];
+                chessPieces[5, 7] = rook;
+                PositionSinglePiece(5, 7);
+                chessPieces[7, 7] = null;
+            }
+        }
+    }
+
+    if(specialMove == SpecialMove.Promotion){
+        Vector2Int[] lastMove = moveList[moveList.Count - 1];
+        ChessPiece targetPawn = chessPieces[lastMove[1].x, lastMove[1].y];
+
+        if(targetPawn.type == ChessPieceType.Pawn){
+            if(targetPawn.team == 0 && lastMove[1].y == 7){ // White team
+                ChessPiece newQueen = SpawnSinglePiece(ChessPieceType.Queen, 0);
+                Destroy(chessPieces[lastMove[1].x, lastMove[1].y].gameObject);
+                chessPieces[lastMove[1].x, lastMove[1].y] = newQueen;
+                PositionSinglePiece(lastMove[1].x, lastMove[1].y);
+            } else if(targetPawn.team == 1 && lastMove[1].y == 0){ // Black team
+                ChessPiece newQueen = SpawnSinglePiece(ChessPieceType.Queen, 1);
+                Destroy(chessPieces[lastMove[1].x, lastMove[1].y].gameObject);
+                chessPieces[lastMove[1].x, lastMove[1].y] = newQueen;
+                PositionSinglePiece(lastMove[1].x, lastMove[1].y);
             }
         }
     }

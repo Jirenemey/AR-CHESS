@@ -1319,6 +1319,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7030992849136271514, guid: 857381d11efac0a4d91a3b3b8b94a827, type: 3}
+      propertyPath: boardCenter.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7030992849136271514, guid: 857381d11efac0a4d91a3b3b8b94a827, type: 3}
       propertyPath: victoryScreen
       value: 
       objectReference: {fileID: 1210901055}
