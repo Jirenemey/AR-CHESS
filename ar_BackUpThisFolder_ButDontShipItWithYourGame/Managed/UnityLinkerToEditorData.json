@@ -41,10 +41,7 @@
             "name": "AudioBehaviour",
             "scenes": [
               "Assets/Scenes/00_Menu.unity",
-              "Assets/Scenes/01_ARSesstion_Test.unity",
-              "Assets/Scenes/02_ImageTracking.unity",
-              "Assets/Scenes/03_Object_Placement.unity",
-              "Assets/Scenes/04_ARSession_Test.unity"
+              "Assets/Scenes/01_ARChess.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -59,10 +56,7 @@
             "name": "AudioListener",
             "scenes": [
               "Assets/Scenes/00_Menu.unity",
-              "Assets/Scenes/01_ARSesstion_Test.unity",
-              "Assets/Scenes/02_ImageTracking.unity",
-              "Assets/Scenes/03_Object_Placement.unity",
-              "Assets/Scenes/04_ARSession_Test.unity"
+              "Assets/Scenes/01_ARChess.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -106,10 +100,7 @@
             "name": "Camera",
             "scenes": [
               "Assets/Scenes/00_Menu.unity",
-              "Assets/Scenes/01_ARSesstion_Test.unity",
-              "Assets/Scenes/02_ImageTracking.unity",
-              "Assets/Scenes/03_Object_Placement.unity",
-              "Assets/Scenes/04_ARSession_Test.unity"
+              "Assets/Scenes/01_ARChess.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -129,7 +120,7 @@
           {
             "name": "Cubemap",
             "scenes": [
-              "Assets/Scenes/04_ARSession_Test.unity"
+              "Assets/Scenes/01_ARChess.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -150,10 +141,7 @@
             "name": "EditorExtension",
             "scenes": [
               "Assets/Scenes/00_Menu.unity",
-              "Assets/Scenes/01_ARSesstion_Test.unity",
-              "Assets/Scenes/02_ImageTracking.unity",
-              "Assets/Scenes/03_Object_Placement.unity",
-              "Assets/Scenes/04_ARSession_Test.unity"
+              "Assets/Scenes/01_ARChess.unity"
             ],
             "dependencyType": 1,
             "icon": null
@@ -168,10 +156,7 @@
             "name": "GameObject",
             "scenes": [
               "Assets/Scenes/00_Menu.unity",
-              "Assets/Scenes/01_ARSesstion_Test.unity",
-              "Assets/Scenes/02_ImageTracking.unity",
-              "Assets/Scenes/03_Object_Placement.unity",
-              "Assets/Scenes/04_ARSession_Test.unity"
+              "Assets/Scenes/01_ARChess.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -198,10 +183,7 @@
             "name": "LevelGameManager",
             "scenes": [
               "Assets/Scenes/00_Menu.unity",
-              "Assets/Scenes/01_ARSesstion_Test.unity",
-              "Assets/Scenes/02_ImageTracking.unity",
-              "Assets/Scenes/03_Object_Placement.unity",
-              "Assets/Scenes/04_ARSession_Test.unity"
+              "Assets/Scenes/01_ARChess.unity"
             ],
             "dependencyType": 1,
             "icon": null
@@ -210,10 +192,7 @@
             "name": "Light",
             "scenes": [
               "Assets/Scenes/00_Menu.unity",
-              "Assets/Scenes/01_ARSesstion_Test.unity",
-              "Assets/Scenes/02_ImageTracking.unity",
-              "Assets/Scenes/03_Object_Placement.unity",
-              "Assets/Scenes/04_ARSession_Test.unity"
+              "Assets/Scenes/01_ARChess.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -234,10 +213,7 @@
             "name": "LightmapSettings",
             "scenes": [
               "Assets/Scenes/00_Menu.unity",
-              "Assets/Scenes/01_ARSesstion_Test.unity",
-              "Assets/Scenes/02_ImageTracking.unity",
-              "Assets/Scenes/03_Object_Placement.unity",
-              "Assets/Scenes/04_ARSession_Test.unity"
+              "Assets/Scenes/01_ARChess.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -245,8 +221,7 @@
           {
             "name": "LineRenderer",
             "scenes": [
-              "Assets/Scenes/03_Object_Placement.unity",
-              "Assets/Scenes/04_ARSession_Test.unity"
+              "Assets/Scenes/01_ARChess.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -261,10 +236,7 @@
             "name": "Material",
             "scenes": [
               "Assets/Scenes/00_Menu.unity",
-              "Assets/Scenes/01_ARSesstion_Test.unity",
-              "Assets/Scenes/02_ImageTracking.unity",
-              "Assets/Scenes/03_Object_Placement.unity",
-              "Assets/Scenes/04_ARSession_Test.unity"
+              "Assets/Scenes/01_ARChess.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -272,8 +244,7 @@
           {
             "name": "Mesh",
             "scenes": [
-              "Assets/Scenes/03_Object_Placement.unity",
-              "Assets/Scenes/04_ARSession_Test.unity"
+              "Assets/Scenes/01_ARChess.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -281,8 +252,7 @@
           {
             "name": "MeshFilter",
             "scenes": [
-              "Assets/Scenes/03_Object_Placement.unity",
-              "Assets/Scenes/04_ARSession_Test.unity"
+              "Assets/Scenes/01_ARChess.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -290,8 +260,7 @@
           {
             "name": "MeshRenderer",
             "scenes": [
-              "Assets/Scenes/03_Object_Placement.unity",
-              "Assets/Scenes/04_ARSession_Test.unity"
+              "Assets/Scenes/01_ARChess.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -300,10 +269,7 @@
             "name": "MonoBehaviour",
             "scenes": [
               "Assets/Scenes/00_Menu.unity",
-              "Assets/Scenes/01_ARSesstion_Test.unity",
-              "Assets/Scenes/02_ImageTracking.unity",
-              "Assets/Scenes/03_Object_Placement.unity",
-              "Assets/Scenes/04_ARSession_Test.unity"
+              "Assets/Scenes/01_ARChess.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -318,10 +284,7 @@
             "name": "MonoScript",
             "scenes": [
               "Assets/Scenes/00_Menu.unity",
-              "Assets/Scenes/01_ARSesstion_Test.unity",
-              "Assets/Scenes/02_ImageTracking.unity",
-              "Assets/Scenes/03_Object_Placement.unity",
-              "Assets/Scenes/04_ARSession_Test.unity"
+              "Assets/Scenes/01_ARChess.unity"
             ],
             "dependencyType": 1,
             "icon": null
@@ -330,10 +293,7 @@
             "name": "NamedObject",
             "scenes": [
               "Assets/Scenes/00_Menu.unity",
-              "Assets/Scenes/01_ARSesstion_Test.unity",
-              "Assets/Scenes/02_ImageTracking.unity",
-              "Assets/Scenes/03_Object_Placement.unity",
-              "Assets/Scenes/04_ARSession_Test.unity"
+              "Assets/Scenes/01_ARChess.unity"
             ],
             "dependencyType": 1,
             "icon": null
@@ -366,10 +326,7 @@
             "name": "RectTransform",
             "scenes": [
               "Assets/Scenes/00_Menu.unity",
-              "Assets/Scenes/01_ARSesstion_Test.unity",
-              "Assets/Scenes/02_ImageTracking.unity",
-              "Assets/Scenes/03_Object_Placement.unity",
-              "Assets/Scenes/04_ARSession_Test.unity"
+              "Assets/Scenes/01_ARChess.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -384,10 +341,7 @@
             "name": "RenderSettings",
             "scenes": [
               "Assets/Scenes/00_Menu.unity",
-              "Assets/Scenes/01_ARSesstion_Test.unity",
-              "Assets/Scenes/02_ImageTracking.unity",
-              "Assets/Scenes/03_Object_Placement.unity",
-              "Assets/Scenes/04_ARSession_Test.unity"
+              "Assets/Scenes/01_ARChess.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -420,10 +374,7 @@
             "name": "Shader",
             "scenes": [
               "Assets/Scenes/00_Menu.unity",
-              "Assets/Scenes/01_ARSesstion_Test.unity",
-              "Assets/Scenes/02_ImageTracking.unity",
-              "Assets/Scenes/03_Object_Placement.unity",
-              "Assets/Scenes/04_ARSession_Test.unity"
+              "Assets/Scenes/01_ARChess.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -444,10 +395,7 @@
             "name": "Sprite",
             "scenes": [
               "Assets/Scenes/00_Menu.unity",
-              "Assets/Scenes/01_ARSesstion_Test.unity",
-              "Assets/Scenes/02_ImageTracking.unity",
-              "Assets/Scenes/03_Object_Placement.unity",
-              "Assets/Scenes/04_ARSession_Test.unity"
+              "Assets/Scenes/01_ARChess.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -807,8 +755,7 @@
           {
             "name": "BoxCollider",
             "scenes": [
-              "Assets/Scenes/03_Object_Placement.unity",
-              "Assets/Scenes/04_ARSession_Test.unity"
+              "Assets/Scenes/01_ARChess.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -822,8 +769,7 @@
           {
             "name": "MeshCollider",
             "scenes": [
-              "Assets/Scenes/03_Object_Placement.unity",
-              "Assets/Scenes/04_ARSession_Test.unity"
+              "Assets/Scenes/01_ARChess.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -1111,10 +1057,7 @@
             "name": "Font",
             "scenes": [
               "Assets/Scenes/00_Menu.unity",
-              "Assets/Scenes/01_ARSesstion_Test.unity",
-              "Assets/Scenes/02_ImageTracking.unity",
-              "Assets/Scenes/03_Object_Placement.unity",
-              "Assets/Scenes/04_ARSession_Test.unity"
+              "Assets/Scenes/01_ARChess.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -1158,10 +1101,7 @@
             "name": "Canvas",
             "scenes": [
               "Assets/Scenes/00_Menu.unity",
-              "Assets/Scenes/01_ARSesstion_Test.unity",
-              "Assets/Scenes/02_ImageTracking.unity",
-              "Assets/Scenes/03_Object_Placement.unity",
-              "Assets/Scenes/04_ARSession_Test.unity"
+              "Assets/Scenes/01_ARChess.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -1176,10 +1116,7 @@
             "name": "CanvasRenderer",
             "scenes": [
               "Assets/Scenes/00_Menu.unity",
-              "Assets/Scenes/01_ARSesstion_Test.unity",
-              "Assets/Scenes/02_ImageTracking.unity",
-              "Assets/Scenes/03_Object_Placement.unity",
-              "Assets/Scenes/04_ARSession_Test.unity"
+              "Assets/Scenes/01_ARChess.unity"
             ],
             "dependencyType": 0,
             "icon": null

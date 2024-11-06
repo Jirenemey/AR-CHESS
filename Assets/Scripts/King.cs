@@ -55,9 +55,9 @@ public class King : ChessPiece
                 r.Add(new Vector2Int(currentX, currentY + 1));
 
         // Down
-        if(currentY + 1 < tileCountY)
-            if(board[currentX, currentY + 1] == null || board[currentX, currentY + 1].team != team)
-                r.Add(new Vector2Int(currentX, currentY + 1));
+        if(currentY - 1 >= 0)
+            if(board[currentX, currentY - 1] == null || board[currentX, currentY - 1].team != team)
+                r.Add(new Vector2Int(currentX, currentY - 1));
 
 
         return r;

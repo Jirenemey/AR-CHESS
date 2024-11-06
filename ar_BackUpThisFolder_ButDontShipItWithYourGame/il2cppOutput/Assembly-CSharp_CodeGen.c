@@ -34,11 +34,16 @@ extern void ChessLogic_DisplayVictory_mC2A665A4469CE7ECD2724B10E028C1418ACE649E 
 extern void ChessLogic_OnResetButton_mC2F99E92F592890DC00C33FAB3B32018DC14673B (void);
 extern void ChessLogic_ExitButton_mC24D0611D6E2D6B70674DA98C4A0E929506F2583 (void);
 extern void ChessLogic_ProcessSpecialMove_mD7F5B60061CD38A2AB68351E80C214C865D7BF70 (void);
+extern void ChessLogic_PreventCheck_mFC23D28315FEAF2E0469D47F5DFECC5AE12E0A61 (void);
+extern void ChessLogic_SimulateMoveForSinglePiece_m3981D0F1CB715E738EDEF46AFC65552D016D6C88 (void);
+extern void ChessLogic_CheckForCheckmate_mBE219885DE2F6C0AD4B07D330B0AE652F4D9FDE0 (void);
 extern void ChessLogic_ContainsValidMove_m7F82664DE96D605DF72D369BBBD5F981512C6547 (void);
 extern void ChessLogic_MoveTo_m5E78CB8913F98DF05A54F13EF109677D10207D53 (void);
 extern void ChessLogic_LookupTileIndex_mEEB31954AE64DA42097C4B243278635D784AFAE5 (void);
 extern void ChessLogic__ctor_m8388A8662EEA66735585B1FC7CF7E9DE890E1679 (void);
 extern void ChessLogic__cctor_m3285EE645FA48CDE1CDC2981C0631A5761433590 (void);
+extern void U3CU3Ec__DisplayClass44_0__ctor_mB253C64614F256BF8E10FC1D62500F0248FA5541 (void);
+extern void U3CU3Ec__DisplayClass44_0_U3CSimulateMoveForSinglePieceU3Eb__0_m66583F7BD1D636F402D48B7E506EBC0BF0FF89FF (void);
 extern void ChessPiece_Update_m1789B5013E6F79DC4A8167740146079BE44193BF (void);
 extern void ChessPiece_GetAvailableMoves_m0A6EF53D37E7BA717B9085550CC7D67286B968EA (void);
 extern void ChessPiece_GetSpecialMoves_m55CF56286BFCBFDB922C684FA0B0DCAA351A1020 (void);
@@ -65,7 +70,7 @@ extern void Rook_GetAvailableMoves_m5ADC71F8EDC41215B3841814F65A36889923904C (vo
 extern void Rook__ctor_m0BC5D3F2407E14DE98B67A083573631786236341 (void);
 extern void UnitySourceGeneratedAssemblyMonoScriptTypes_v1_Get_mBEB95BEB954BB63E9710BBC7AD5E78C4CB0A0033 (void);
 extern void UnitySourceGeneratedAssemblyMonoScriptTypes_v1__ctor_mE70FB23ACC1EA12ABC948AA22C2E78B2D0AA39B1 (void);
-static Il2CppMethodPointer s_methodPointers[58] = 
+static Il2CppMethodPointer s_methodPointers[63] = 
 {
 	TapToPlaceObject_Awake_m93AB231B500D89D75C55A7E390FF8919204F866D,
 	TapToPlaceObject_GetTouchPosition_m016B08112960A5FBC5FC27CF56A240AC5B544F22,
@@ -94,11 +99,16 @@ static Il2CppMethodPointer s_methodPointers[58] =
 	ChessLogic_OnResetButton_mC2F99E92F592890DC00C33FAB3B32018DC14673B,
 	ChessLogic_ExitButton_mC24D0611D6E2D6B70674DA98C4A0E929506F2583,
 	ChessLogic_ProcessSpecialMove_mD7F5B60061CD38A2AB68351E80C214C865D7BF70,
+	ChessLogic_PreventCheck_mFC23D28315FEAF2E0469D47F5DFECC5AE12E0A61,
+	ChessLogic_SimulateMoveForSinglePiece_m3981D0F1CB715E738EDEF46AFC65552D016D6C88,
+	ChessLogic_CheckForCheckmate_mBE219885DE2F6C0AD4B07D330B0AE652F4D9FDE0,
 	ChessLogic_ContainsValidMove_m7F82664DE96D605DF72D369BBBD5F981512C6547,
 	ChessLogic_MoveTo_m5E78CB8913F98DF05A54F13EF109677D10207D53,
 	ChessLogic_LookupTileIndex_mEEB31954AE64DA42097C4B243278635D784AFAE5,
 	ChessLogic__ctor_m8388A8662EEA66735585B1FC7CF7E9DE890E1679,
 	ChessLogic__cctor_m3285EE645FA48CDE1CDC2981C0631A5761433590,
+	U3CU3Ec__DisplayClass44_0__ctor_mB253C64614F256BF8E10FC1D62500F0248FA5541,
+	U3CU3Ec__DisplayClass44_0_U3CSimulateMoveForSinglePieceU3Eb__0_m66583F7BD1D636F402D48B7E506EBC0BF0FF89FF,
 	ChessPiece_Update_m1789B5013E6F79DC4A8167740146079BE44193BF,
 	ChessPiece_GetAvailableMoves_m0A6EF53D37E7BA717B9085550CC7D67286B968EA,
 	ChessPiece_GetSpecialMoves_m55CF56286BFCBFDB922C684FA0B0DCAA351A1020,
@@ -126,7 +136,7 @@ static Il2CppMethodPointer s_methodPointers[58] =
 	UnitySourceGeneratedAssemblyMonoScriptTypes_v1_Get_mBEB95BEB954BB63E9710BBC7AD5E78C4CB0A0033,
 	UnitySourceGeneratedAssemblyMonoScriptTypes_v1__ctor_mE70FB23ACC1EA12ABC948AA22C2E78B2D0AA39B1,
 };
-static const int32_t s_InvokerIndices[58] = 
+static const int32_t s_InvokerIndices[63] = 
 {
 	8588,
 	4375,
@@ -155,11 +165,16 @@ static const int32_t s_InvokerIndices[58] =
 	8588,
 	8588,
 	8588,
+	8588,
+	1495,
+	8408,
 	1756,
 	1203,
 	5897,
 	8588,
 	12654,
+	8588,
+	4549,
 	8588,
 	1289,
 	1264,
@@ -191,7 +206,7 @@ IL2CPP_EXTERN_C const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule;
 const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule = 
 {
 	"Assembly-CSharp.dll",
-	58,
+	63,
 	s_methodPointers,
 	0,
 	NULL,
